@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Trash2, Plus, Edit3, FileText, Settings } from "lucide-react"
+import { WalkthroughTrigger } from "@/components/walkthrough"
 
 interface EnvData {
   [envName: string]: {
@@ -146,6 +147,7 @@ export default function EnvironmentCRM() {
             <p className="text-muted-foreground text-lg">Manage your application configurations</p>
           </div>
           <div className="flex items-center gap-4">
+            <WalkthroughTrigger />
             <Dialog>
               <DialogTrigger asChild>
                 <Button variant="outline" size="lg">
