@@ -150,7 +150,7 @@ export default function EnvironmentCRM() {
             <WalkthroughTrigger />
             <Dialog>
               <DialogTrigger asChild>
-                <Button variant="outline" size="lg">
+                <Button variant="outline" size="lg" data-walkthrough="add-environment">
                   <Plus className="w-4 h-4 mr-2" />
                   Add Environment
                 </Button>
@@ -179,14 +179,14 @@ export default function EnvironmentCRM() {
         </div>
 
         {/* Environment Selector */}
-        <Card>
+        <Card data-walkthrough="environment-selector">
           <CardHeader>
             <div className="flex items-center justify-between">
               <CardTitle className="flex items-center gap-2">
                 <Settings className="w-5 h-5" />
                 Current Environment
               </CardTitle>
-              <Button onClick={handleBulkModeToggle} variant={isBulkMode ? "default" : "outline"} size="sm">
+              <Button onClick={handleBulkModeToggle} variant={isBulkMode ? "default" : "outline"} size="sm" data-walkthrough="bulk-editor-toggle">
                 <FileText className="w-4 h-4 mr-2" />
                 {isBulkMode ? "Table View" : "Bulk Editor"}
               </Button>
@@ -242,7 +242,7 @@ export default function EnvironmentCRM() {
             </CardHeader>
             <CardContent className="space-y-6">
               {/* Add New Variable */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-card/50 rounded-lg border">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-card/50 rounded-lg border" data-walkthrough="add-variable-form">
                 <div>
                   <Label htmlFor="new-key">Variable Name</Label>
                   <Input
@@ -270,7 +270,7 @@ export default function EnvironmentCRM() {
               </div>
 
               {/* Variables Table */}
-              <div className="border rounded-lg">
+              <div className="border rounded-lg" data-walkthrough="variables-table">
                 <Table>
                   <TableHeader>
                     <TableRow>
